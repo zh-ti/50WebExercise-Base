@@ -1,0 +1,122 @@
+@import "font/iconfont.css";
+@font-face{
+    font-family: "Lato";
+    src: url("./font/Lato-Medium.ttf") format("truetype");
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Lato', sans-serif;
+    overflow-x:hidden;
+}
+main{
+    margin: 0;
+    background-color: #333;
+    position:relative;
+}
+.open{
+    transform: rotate(-20deg);
+}
+.container{
+    position:relative;
+    z-index:1;
+    width: calc(100% - 100px);
+    padding: 50px;
+    background-color: #fafafa;
+    transition:all 0.5s linear;
+    transform-origin: top left;
+}
+section{
+    width: 1000px;
+    margin: 50px auto;
+}
+.my-dog{
+    width: 1000px;
+}
+h2{
+    color:#222;
+    font-size:2em;
+    font-weight: blod;
+}
+i{
+    font-size: smaller;
+    color: #888;
+}
+p{
+    margin: 16px 0;
+    line-height: 1.5;
+    color: #333;
+    font-weight: 100;
+}
+h3{
+    margin: 18px 0;
+}
+.circle{
+    position:fixed;
+    z-index:10;
+    top:-100px;
+    left:-100px;
+    width: 200px;
+    height: 200px;
+    border-radius:50%;
+    background-color: #ff7979;
+    transition: all .5s linear;
+    transform: rotate(0deg);
+}
+.rotate{
+    transform: rotate(-95deg);
+}
+.circle .iconfont{
+    display:block;
+    position:absolute;
+    font-size: 40px;
+    bottom: 35px;
+    color: #fff;
+    cursor:pointer;
+}
+.iconfont:first-child{
+    transform: rotate(180deg);
+    right:35px;
+}
+.iconfont:nth-child(2){
+    transform: rotate(275deg);
+    left: 35px;
+}
+.buttons{
+    position:fixed;
+    z-index:0;
+    bottom: 40px;
+    padding-left: 30px;
+}
+.buttons a{
+    opacity: 0;
+    display:block;
+    margin: 40px 0;
+    color:#fafafa;
+    text-decoration: none;
+    font-size:18px;
+    line-height:20px;
+    transition: all 0.5s;
+}
+.buttons a:hover{
+    color:#ff7979;
+}
+.buttons a span{
+    font-size: 18px;
+    margin-right: 3px;
+}
+.buttons a:first-child span{
+    font-size: 28px;
+    margin-right: 0;
+}
+.show a{
+    opacity:1;
+}
+.show a:nth-child(2){
+    margin-left: 45px;
+}
+.show a:nth-child(3){
+    margin-left: 60px;
+}

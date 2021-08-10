@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+main{
+    width: 100vw;
+    height: 100vh;
+    display:flex;
+}
+main .goods{
+    width: 50vw;
+    height: 100vh;
+    display:flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+    transition:all 1s;
+}
+main .goods:hover{
+    width: 70vw;
+}
+.shrink{
+    width: 30vw !important;
+}
+main .left{
+    background: url("./image/huawei-phone.jpg") no-repeat;
+    background-size: cover;
+}
+main .right{
+    background: url("./image/lenovo-xiaoxin.jpg") no-repeat;
+    background-size: cover;
+}
+main .left::after{
+    content:'';
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(73, 16, 16, 0.4);
+}
+main .right::after{
+    content:'';
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(85, 112, 134, 0.5);
+}
+.goods h2{
+    position:relative;
+    z-index:10;
+    margin: 30px 0;
+    font-size: 2em;
+    color: #fff;
+}
+.goods button{
+    position:relative;
+    z-index:10;
+    font-size: 1.1em;
+    padding:15px 50px;;
+    font-weight: bold;
+    border: 3px solid #fff;
+    color: #fff;
+    background-color: transparent;
+    cursor: pointer;
+}
+.left button:hover{
+    border-color:#e45353;
+    background-color: #e45353;
+}
+.right button:hover{
+    border-color:#3ca7e6;
+    background-color: #3ca7e6;
+}
