@@ -1,0 +1,42 @@
+@import "./font/iconfont.css";
+@font-face{
+    font-family: "RobotoMono";
+    src: url("./font/RobotoMono.ttf");
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: "RobotoMono";
+    background-color: #8e44ad;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main{
+    display:flex;
+    align-items:center;
+}
+.content{
+    text-align:center;
+    margin: 30px 50px;
+    color: #fff;
+}
+h2{
+    margin: 5px 0;
+    font-size: 3.5em;
+    font-weight: 500;
+}
+.content:first-child span,
+.content:nth-child(2) span{
+    height: 48px;
+    line-height: 48px;
+    font-size: 4em;
+}
+.content:nth-child(3) span{
+    height: 48px;
+    line-height: 48px;
+    font-size: 3em;
+}
