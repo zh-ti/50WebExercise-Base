@@ -89,10 +89,10 @@ window.onload = function(){
         function clockLaunch(){
             Math.floor(360/60*date.seconds)  == 0 && secondRound++;
             Math.floor(360/60*date.minutes) == 0 && minuteRound++;
-            Math.floor(360/60*date.hour) == 0 && minuteRound++;
+            Math.floor(360/12*date.hour) == 0 && minuteRound++;
             secoundPointer.style.transform = `rotate(${Math.floor(360/60*date.seconds) + (secondRound * 360)}deg)`;
-            minutePointer.style.transform = `rotate(${Math.floor(360/60*date.minutes) + (minuteRound * 360)})`;
-            hourPointer.style.transform = `rotate(${Math.floor(360/60*date.hours) + (minuteRound * 360)}deg)`;
+            minutePointer.style.transform = `rotate(${Math.floor(360/60*date.minutes) + (minuteRound * 360)}deg)`;
+            hourPointer.style.transform = `rotate(${Math.floor(360/12*date.hours) + (minuteRound * 360)}deg)`;
         }
         setInfo();
         clockLaunch();
