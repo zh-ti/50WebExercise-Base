@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="Access-Control-Allow-Origin" content="*" />
+        <link rel="stylesheet" href="./style.css" />
+        <script src="./script.js"></script>
+        <title>Movies App</title>
+    </head>
+    <body>
+        <button>查询</button>
+        <script>
+            const btn = document.querySelector('button');
+            btn.onclick = function () {
+                //http://api.douban.com/v2/movie/in_theaters?apikey=0b2bdeda43b5688921839c8ecb20399b
+                //url = f'http://api.douban.com/v2/movie/in_theaters?apikey={api_key}&city=武汉'
+                const xhr = new XMLHttpRequest();
+                xhr.open(
+                    'get',
+                    'http://api.douban.com/v2/movie/in_theaters?apikey=0b2bdeda43b5688921839c8ecb20399b&city=成都'
+                );
+                xhr.send();
+                xhr.onload = function () {
+                    console.log(xhr.response);
+                };
+            };
+        </script>
+    </body>
+</html>

@@ -1,0 +1,131 @@
+@font-face{
+    font-family: "Heebo";
+    src: url("./font/Heebo-Thin.ttf");
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #fff;
+    font-family: "Heebo";
+}
+body,
+body > *{
+    transition: all 0.7s;
+}
+main{
+    width: 600px;
+    height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.mode{
+    background-color: #000;
+    color: #fff;
+    border: none;
+    outline: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 40px;
+}
+.clock{
+    width: 250px;
+    height: 250px;
+    margin: 10px;
+    position: relative;
+    transform: rotate(-90deg);
+}
+.clock > *{
+    position: absolute;
+    transition: transform 0.1s;
+}
+
+.clock .hour{
+    width: 60px;
+    height: 4px;
+    background-color: #000;
+    left: calc(50% + 3px);
+    top: calc(50% - 2px);
+    transform-origin: -3px center;
+}
+
+.clock .minute{
+    width: 80px;
+    height: 4px;
+    background-color: #000;
+    left: calc(50% + 3px);
+    top: calc(50% - 2px);
+    transform-origin: -3px center;
+}
+
+.clock .secound{
+    top: 5px;
+    transform-origin: 6px 6px;
+    left: calc(50% - 6px);
+    top: calc(50% - 6px);
+}
+
+
+.clock .secound .line{
+    position: absolute;
+    width: 100px;
+    height: 4px;
+    top: 4px;
+    left: 7px;
+    background-color: #e74c3c;
+}
+.clock .secound .circle{
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border: 4px solid #e74c3c;
+    background-color: #000;
+    border-radius: 50%;
+}
+h2{
+    height: 88px;
+    font-size:0;
+}
+h2 span{
+    font-size: 60px;
+}
+h2 span:last-child{
+    margin-left: 15px;
+}
+p{
+    font-size: 14px;
+}
+p span:last-child{
+    display: inline-block;
+    background-color: #000;
+    border-radius: 50%;
+    color: #fff;
+    width: 18px;
+    height: 18px;
+}
+
+.dark-mode{
+    color: #fff;
+    background-color: #111;
+}
+.dark-mode .mode{
+    background-color: #fff;
+    color: #000;
+}
+.dark-mode .clock .hour,
+.dark-mode .clock .minute{
+    background-color: #fff;
+}
+.dark-mode .clock .secound .circle{
+    background-color: #fff;
+
+}
+.dark-mode p span:last-child{
+    background-color: #fff;
+    color: #000;
+}

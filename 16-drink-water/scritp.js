@@ -13,10 +13,10 @@ window.onload = function(){
                 }
             }
             const alreadyH = container.offsetHeight / 8 * (index + 1);
-            already.style.height = alreadyH + "px"
+            already.style.height = alreadyH + "px";
             remained.style.height = container.offsetHeight - alreadyH + "px";
             alreadyText.innerText = (index + 1) * 100 / 8 + "%";
-            remainedTextl.innerText = 2 - 2 * (index + 1) / 8 + "L"
+            remainedTextl.innerText = 2 - 2 * (index + 1) / 8 + "L";
         })
     })
 }
