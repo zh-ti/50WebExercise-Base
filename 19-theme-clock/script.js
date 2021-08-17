@@ -5,6 +5,7 @@ window.onload = function(){
     const [week, month, day] = document.querySelectorAll("p span");
     const [hourPointer, minutePointer, secoundPointer] = document.querySelectorAll(".clock > div");
     let secondRound = minuteRound = hourRound = 0;
+    let minuteTime = hourTime = null;
 
     function MyDate(date){
         return {
@@ -87,12 +88,20 @@ window.onload = function(){
             day.innerText = date.day;
         }
         function clockLaunch(){
-            Math.floor(360/60*date.seconds)  == 0 && secondRound++;
-            Math.floor(360/60*date.minutes) == 0 && minuteRound++;
-            Math.floor(360/12*date.hour) == 0 && minuteRound++;
-            secoundPointer.style.transform = `rotate(${Math.floor(360/60*date.seconds) + (secondRound * 360)}deg)`;
-            minutePointer.style.transform = `rotate(${Math.floor(360/60*date.minutes) + (minuteRound * 360)}deg)`;
-            hourPointer.style.transform = `rotate(${Math.floor(360/12*date.hours) + (minuteRound * 360)}deg)`;
+            360/60*date.seconds  == 0 && secondRound++; //秒针走完一圈 secoundRound++
+            // 秒针走完一圈且 minuteTime 不存在 或者 当前的时间减去 minuteTime 大于等于 60s 时，minuteRound++
+            if(360/60*date.minites  == 0 && (!minuteTime || Date.now() - minuteTime >= 6000)){
+                miniteRound++;
+                minuteTime = Date.now();
+            }
+            // 秒针走完一圈且 hourTime 不存在 或者 当前的时间减去 hourTime 大于等于 60m 时，hourRound++
+            if(360/60*date.hours  == 0 && (!hourTime || Date.now() - hourTime >= 60000)){
+                hourRound++;
+                hourTime = Date.now();
+            }
+            secoundPointer.style.transform = `rotate(${360/60*date.seconds + (secondRound * 360)}deg)`;
+            minutePointer.style.transform = `rotate(${360/60*date.minutes + (minuteRound * 360)}deg)`;
+            hourPointer.style.transform = `rotate(${360/12*date.hours + (minuteRound * 360)}deg)`;
         }
         setInfo();
         clockLaunch();
