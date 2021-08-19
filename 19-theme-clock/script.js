@@ -90,7 +90,9 @@ window.onload = function(){
         function clockLaunch(){
             360/60*date.seconds  == 0 && secondRound++; //秒针走完一圈 secoundRound++
             // 秒针走完一圈且 minuteTime 不存在 或者 当前的时间减去 minuteTime 大于等于 60s 时，minuteRound++
-            if(360/60*date.minites  == 0 && (!minuteTime || Date.now() - minuteTime >= 6000)){
+            const time = Date.now()
+            const judge = time - minuteTime >= 6000;
+            if(360/60*date.minutes  == 0 && (!minuteTime || judge)){
                 miniteRound++;
                 minuteTime = Date.now();
             }
@@ -99,9 +101,12 @@ window.onload = function(){
                 hourRound++;
                 hourTime = Date.now();
             }
+            if(360/60*date.minutes  == 0){
+                console.log("Date.now()", time, minuteTime, judge);
+            }
             secoundPointer.style.transform = `rotate(${360/60*date.seconds + (secondRound * 360)}deg)`;
-            minutePointer.style.transform = `rotate(${360/60*date.minutes + (minuteRound * 360)}deg)`;
-            hourPointer.style.transform = `rotate(${360/12*date.hours + (minuteRound * 360)}deg)`;
+            minutePointer.style.transform = `rotate(${360/60*date.minutes + (minuteRound * 360) + (360/3600*date.seconds)}deg)`;
+            hourPointer.style.transform = `rotate(${360/12*date.hours + (minuteRound * 360)+(360/720*date.minutes)}deg)`;
         }
         setInfo();
         clockLaunch();

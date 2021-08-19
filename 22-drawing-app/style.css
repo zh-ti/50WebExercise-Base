@@ -1,0 +1,117 @@
+@import "./font/iconfont.css";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    position: relative;
+    background-color: #dfe6e9;
+    cursor: url("./image/brush.ico"), auto;
+    min-height: 730px;
+}
+main{
+    box-sizing: content-box;
+    position: absolute;
+    left: calc(50% - 400px);
+    bottom: 20px;
+    width: 800px;
+    height: 700px;
+    border: 2px solid #999;
+}
+canvas{
+    width: 100%;
+    height: 620px;
+    background-color: #fff;
+}
+.canvas{
+    position:relative;
+    overflow: hidden;
+}
+.canvas .put-point{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #ddd;
+    border-radius: 50%;
+}
+.panel{
+    position: relative;
+    border-top: 3px dashed #999;
+    top: -4px;
+    height: 80px;
+    background-color: #ddd;
+    cursor: auto;
+}
+.brush-size{
+    width: 120px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.left,.right{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.left button{
+    box-sizing: content-box;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 3px solid #ddd;
+}
+.focus{
+    border-color: #fff !important;
+    box-shadow: 0 0 3px #ddd;
+}
+.left{
+    width: 200px;
+    height: 100%;
+    float: left;
+}
+.left button:first-child{
+    width: 15px;
+    height: 15px;
+    background-color: #000;
+}
+.left button:nth-child(2){
+    width: 20px;
+    height: 20px;
+    background-color: #000;
+}
+.left button:nth-child(3){
+    width: 30px;
+    height: 30px;
+    background-color: #000;
+}
+.brush-color input{
+    display: block;
+    padding: 2px;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+}
+.right{
+    float: right;
+    width: 200px;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.right span{
+    width: 25px;
+    height: 25px;
+    display: block;
+    transform: scale(1.8);
+    border: 2px solid #ddd;
+    padding: 2px;
+    cursor: pointer;
+}
+.right span:last-child{
+    transition: 0.5s;
+}
