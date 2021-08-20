@@ -56,9 +56,7 @@ window.onload = function(){
                 cxt.fillRect(0,0,canvas.offsetWidth, canvas.offsetHeight)
                 setTimeout(()=>{
                     item.classList.remove("focus")
-                    canvasControls[0].classList.add("focus")
-                    document.body.style.cursor = "url(./image/brush.ico), auto";
-                    setBrushColor(brushColorBtn.value);
+                    canvasControls[0].click()
                 }, 500)
             }
         })
