@@ -1,0 +1,92 @@
+@import './font/iconfont.css';
+@font-face {
+    font-family: 'Open-Sans';
+    src: url('./font/Open-Sans.ttf');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    height: 100vh;
+    font-family: 'Open-Sans';
+}
+main {
+    position: relative;
+    min-width: 1000px;
+    min-height: 500px;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+main > div {
+    height: 100%;
+    transition: transform 0.5s;
+    float: left;
+}
+.slider-left {
+    width: 35%;
+    transform: translateY(-300%);
+}
+.slider-left div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+.slider-left div h2 {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+}
+.slider-left div:nth-child(4) {
+    background-color: #fd3555;
+}
+.slider-left div:nth-child(3) {
+    background-color: #2a86ba;
+}
+.slider-left div:nth-child(2) {
+    background-color: #252e33;
+}
+.slider-left div:nth-child(1) {
+    background-color: #ffb866;
+}
+.slider-right {
+    width: 65%;
+    height: 100%;
+    background-color: #eadad6;
+}
+.slider-right img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.btns {
+    position: absolute;
+    top: calc(50% - 50px);
+    left: calc(35% - 50px);
+    width: 100px;
+    height: 100px;
+}
+.btns button {
+    width: 50px;
+    height: 50px;
+    border: none;
+    outline: none;
+    border-radius: 5px 0 0 5px;
+    background-color: #fff;
+    font-size: 23px;
+    color: #999;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+.btns button:first-child {
+    transform: translateX(50px) rotate(180deg);
+}
+.btns button:hover {
+    color: #333;
+}
